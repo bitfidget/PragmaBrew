@@ -1,0 +1,57 @@
+{
+  "name": "pragmabrew",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "client": "webpack --watch & webpack-dev-server --open --mode development",
+    "server": "nodemon --exec babel-node server/server.js",
+    "build": "webpack --mode production",
+    "format": "prettier --write \"client/src/**/*.js\"",
+    "start-not": "nodemon --exec babel-node server/server.js --ignore client  --mode development & open http://localhost:4001/",
+    "start": "npm run server | npm run client"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "./setupTests.js"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "babel-jest": "^24.9.0",
+    "cors": "^2.8.5",
+    "jest": "^24.9.0",
+    "open": "^6.4.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/node": "^7.6.1",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "react-test-renderer": "^16.9.0",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.8",
+    "webpack-dev-middleware": "^3.7.1",
+    "webpack-dev-server": "^3.8.0",
+    "webpack-livereload-plugin": "^2.2.0",
+    "regenerator-runtime": "^0.13.3"
+  }
+}
